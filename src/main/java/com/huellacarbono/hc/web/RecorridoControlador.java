@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.huellacarbono.web;
+package com.huellacarbono.hc.web;
 
-import com.huellacarbono.modelo.Recorrido;
-import com.huellacarbono.servicio.RecorridoServicio;
+import com.huellacarbono.hc.modelo.Recorrido;
+import com.huellacarbono.hc.servicio.RecorridoServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Ale Giraldo
  */
 @RestController
-@RequestMapping("api/recorrido")
+@RequestMapping("/api/recorrido")
 @CrossOrigin(origins="*", methods={RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class RecorridoControlador {
     

@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.huellacarbono.repositorio.crud;
+package com.huellacarbono.hc.repositorio.crud;
 
-import com.huellacarbono.modelo.Usuario;
+import com.huellacarbono.hc.modelo.Usuario;
 import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 

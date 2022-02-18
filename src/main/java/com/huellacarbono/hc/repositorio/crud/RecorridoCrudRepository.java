@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.huellacarbono.repositorio.crud;
-import com.huellacarbono.modelo.Recorrido;
+package com.huellacarbono.hc.repositorio.crud;
+import com.huellacarbono.hc.modelo.Recorrido;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 /**

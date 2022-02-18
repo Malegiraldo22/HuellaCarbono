@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/Perfil.css">
+    <title>Huella Carbono - Perfil</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: #79ec79;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Index.html">Calcula tu Huella</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <!-- Profile info -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img class="rounded-circle mt-5" src="/img/profilepic.png" alt="profile" width="150px">
+                    <span class="font-weight-bold" id="user">User</span>
+                </div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-center">Perfil Usuario</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Nombre</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary" id="userName">Pepito Perez</div>
+                </div>
+                <hr>
+                <div class="row mt-2">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary" id="userEmail">Pepito@correo.com</div>
+                </div>
+                <hr>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditUser" id="openEditUser">Editar perfil</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCalHu" id="openCalcHu">Calcular huella</button>
+            </div>
+            <!-- Info Recorrido -->
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <h4 class="text-center">Recorridos Realizados</h4> 
+                            <table class="table table-sm" id="tablePerfil">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Ciudad</th>
+                                        <th scope="col">Barrio</th>
+                                        <th scope="col">Vehiculo</th>
+                                        <th scope="col">Distancia</th>
+                                        <th scope="col">Huella</th>      
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Huella total -->
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <h4 class="text-center">Total Huella Carbono</h4>
+                            <h3>200 Kg/CO<sub>2</sub> </h3>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <!-- Modal Editar Usuario -->
+    <div class="modal fade modal-dialog-scrollable" id="modalEditUser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditUserLabel">Editar Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form">
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                                <div class="invalid-feedback" id="nameFeedback">
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" required>
+                                <div class="invalid-feedback" id="emailFeedback">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="usuario" class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="usuario" required>
+                                <div class="invalid-feedback" id="userFeedback">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="contrasena" class="form-label">Contrase&ntilde;a</label>
+                                <input type="password" class="form-control" id="contrasena" required>
+                                <div class="invalid-feedback" id=passFeedback>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="contrasenaConfirm" class="form-label">Confirmar Contrase&ntilde;a</label>
+                                <input type="password" class="form-control" id="contrasenaConfirm" required>
+                                <div class="invalid-feedback" id=passConFeedback>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="editUser">Editar Usuario</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calcular huella -->
+    <div class="modal fade modal-dialog-scrollable" id="modalCalHu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCalHu">Calcular Huella</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form">
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="fecha" class="form-label">Fecha</label>
+                                <input type="date" class="form-control" id="fecha" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="ciudad" class="form-label">Ciudad</label>
+                                <input type="text" class="form-control" id="ciudad" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="barrio" class="form-label">Barrio</label>
+                                <input type="text" class="form-control" id="barrio" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="vehiculo" class="form-label">Veh&iacute;culo</label>
+                                <input type="text" class="form-control" id="vehiculo" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="combustible" class="form-label">Combustible</label>
+                                <br>
+                                <input type="radio" id="combustible" name="gasolina" value="gasolina">
+                                <label for="combustible">Gasolina</label>
+    
+                                <input type="radio" id="combustible" name="diesel" value="diesel">
+                                <label for="combustible">Di&eacute;sel</label>
+
+                                <input type="radio" id="combustible" name="gas natural" value="gas natural">
+                                <label for="combustible">Gas Natural</label>
+                            </div>
+                        </div>
+                        <div class="row mb-3 justify-content-md-center">
+                            <div class="">
+                                <label for="distancia" class="form-label">Distancia</label>
+                                <input type="number" class="form-control" id="distancia" required>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="editUser">Calcular Huella</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">&copy; 2022 Alejandro Giraldo</p>
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="faq.html" class="nav-link px-2 text-muted">Preguntas Frecuentes</a></li>
+            <li class="nav-item"><a href="mailto:magiraldo2224@gmail.com" class="nav-link px-2 text-muted">Contacto</a></li>
+        </ul>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

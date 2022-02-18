@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.huellacarbono.repositorio;
+package com.huellacarbono.hc.repositorio;
 
-import com.huellacarbono.modelo.Recorrido;
-import com.huellacarbono.repositorio.crud.RecorridoCrudRepository;
+import com.huellacarbono.hc.modelo.Recorrido;
+import com.huellacarbono.hc.repositorio.crud.RecorridoCrudRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.huellacarbono.servicio;
+package com.huellacarbono.hc.servicio;
 
-import com.huellacarbono.modelo.Recorrido;
-import com.huellacarbono.repositorio.RecorridoRepository;
+import com.huellacarbono.hc.modelo.Recorrido;
+import com.huellacarbono.hc.repositorio.RecorridoRepository;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +18,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class RecorridoServicio {
+    
+    @Autowired
     private RecorridoRepository recorridoRepository;
     
     public List<Recorrido> getAll(){

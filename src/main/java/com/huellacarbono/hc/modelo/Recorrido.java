@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.huellacarbono.modelo;
+package com.huellacarbono.hc.modelo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.CascadeType;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,21 +24,26 @@ import lombok.NoArgsConstructor;
  * @author Ale Giraldo
  */
 @Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name="User")
-public class Usuario implements Serializable{
+@Table(name="Recorrido")
+public class Recorrido implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String nombre;
-    private String email;
-    private String usuario;
-    private String contrasena;
+    @javax.persistence.Temporal(javax.persistence.TemporalType.DATE)
+    private Date fecha;
+    private String ciudad;
+    private String barrio;
+    private String vehiculo;
+    private Integer distancia;
+    private Double resultado;
     
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy="usuario")
-    @JsonIgnoreProperties({"usuario"})
-    private List<Recorrido> recorrido;
+    @ManyToOne
+    @JoinColumn(name="Usuario", nullable=false)
+    @JsonIgnoreProperties("recorrido")
+    private Usuario usuario;
+    
 }

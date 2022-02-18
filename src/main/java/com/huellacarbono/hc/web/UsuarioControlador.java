@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.huellacarbono.web;
+package com.huellacarbono.hc.web;
 
-import com.huellacarbono.modelo.Usuario;
-import com.huellacarbono.servicio.UsuarioServicio;
+import com.huellacarbono.hc.modelo.Usuario;
+import com.huellacarbono.hc.servicio.UsuarioServicio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Ale Giraldo
  */
 @RestController
-@RequestMapping("api/usuario")
+@RequestMapping("/api/usuario")
 @CrossOrigin(origins="*", methods={RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class UsuarioControlador {
     

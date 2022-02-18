@@ -1,0 +1,13 @@
+#faqFlush{
+    margin:auto;
+    width: 50%;
+}
+
+#titulo{
+    margin: auto;
+    text-align: center;
+}
+
+.accordion-body{
+    text-align: justify;
+}
